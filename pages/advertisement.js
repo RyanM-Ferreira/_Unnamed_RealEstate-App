@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image } from 'reac
 export default function Advertisement() {
     return (
         <View style={styles.screen}>
-            {/* Header */}
+           
             <View style={styles.header}>
                 <TouchableOpacity style={styles.menuButton}>
                     <Image

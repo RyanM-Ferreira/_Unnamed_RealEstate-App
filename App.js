@@ -14,14 +14,33 @@ import Profile from './pages/profile';
 import Settings from './pages/settings';
 import Login from './pages/login';
 import SignUp from './pages/signup';
+import Advertisement from './pages/advertisement';
 
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName="Advertisement"
+        screenOptions={{
+          headerShown: false,
+          tabBarActiveTintColor: '#e91e63',
+        }}>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Saved" component={Saved} />
+        <Tab.Screen name="Chat" component={Chat} />
+        <Tab.Screen name="ChatIn" component={ChatIn} />
+        <Tab.Screen name="Greetings" component={Greetings}  />
+        <Tab.Screen name="Profile" component={Profile} />
+        <Tab.Screen name="Settings" component={Settings} />
+        <Tab.Screen name="Login" component={Login} />
+        <Tab.Screen name="SignUp" component={SignUp} />
+        <Tab.Screen name="Advertisement" component={Advertisement} />
+      </Tab.Navigator>
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 }
 

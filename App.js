@@ -23,7 +23,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="Saved"
+        initialRouteName="Profile"
         screenOptions={{
           headerShown: false,
           tabBarActiveTintColor: '#e91e63',

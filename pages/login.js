@@ -1,16 +1,95 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 
-export default function Login() {
+/* Apparently, React Native doesn't have Linear Gradient like CSS, so it's necessary to
+import an additional component*/
+import { LinearGradient } from 'expo-linear-gradient';
+
+import { Colors } from '../stylesGlobal';
+import StylesGlobal from '../stylesGlobal';
+
+export default function SignUp() {
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+
     return (
-        <View>
-            content
-        </View>
-    )
+        <LinearGradient
+            colors={[Colors.primaryColor, Colors.gradientColor]}
+            style={StylesGlobal.gradientBodyContainer}>
+            <View style={StylesLogin.container} showsHorizontalScrollIndicator={false}>
+                <Text style={StylesLogin.title}>Entrar</Text>
+
+                <Text style={StylesLogin.label}>E-mail:</Text>
+                <TextInput
+                    style={StylesLogin.input}
+                    placeholder="email@dominio.com"
+                    value={email}
+                    onChangeText={setEmail}
+                    keyboardType="email-address"
+                />
+
+                <Text style={StylesLogin.label}>Senha:</Text>
+                <TextInput
+                    style={StylesLogin.input}
+                    placeholder="******"
+                    value={senha}
+                    onChangeText={setSenha}
+                    secureTextEntry
+                />
+
+                <TouchableOpacity onPress={() => { }}>
+                    <Text style={StylesLogin.loginLink}>Não possui uma conta? Crie aqui!</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={StylesLogin.button} onPress={() => { }}>
+                    <Text style={StylesLogin.buttonText}>Criar</Text>
+                </TouchableOpacity>
+            </View >
+        </LinearGradient >
+    );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        padding: 0,
+export const StylesLogin = StyleSheet.create({
+    title: {
+        fontSize: 28,
+        color: Colors.primaryColor,
+        fontWeight: 'bold',
+        marginBottom: 12,
     },
+    container: {
+        backgroundColor: 'white',
+        borderRadius: 12,
+        padding: 20,
+        justifyContent: 'center',
+        marginVertical: 'auto',
+    },
+    label: {
+        marginBottom: 5,
+        marginTop: 10,
+        fontSize: 15
+    },
+    input: {
+        borderWidth: 2,
+        borderColor: Colors.primaryColor,
+        borderRadius: 8,
+        padding: 10,
+        color: 'black',
+    },
+    loginLink: {
+        marginTop: 20,
+        color: 'black',
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
+    button: {
+        backgroundColor: Colors.primaryColor,
+        padding: 15,
+        borderRadius: 10,
+        marginVertical: 8
+    },
+    buttonText: {
+        color: 'white',
+        textAlign: 'center',
+        fontWeight: 'bold'
+    }
 });

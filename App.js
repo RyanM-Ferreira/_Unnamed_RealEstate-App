@@ -36,7 +36,7 @@ export default function App() {
         <Tab.Screen name="Saved" component={Saved} options={{ tabBarIcon: ({ color, size }) => (<Image style={styles.tabBarIconStyle} source={require('./assets/icons/normal/savedIcon.svg')} />), }} />
         <Tab.Screen name="Chat" component={Chat} options={{ tabBarIcon: ({ color, size }) => (<Image style={styles.tabBarIconStyle} source={require('./assets/icons/normal/contactIcon.svg')} />), }} />
         <Tab.Screen name="Settings" component={Settings} options={{ tabBarIcon: ({ color, size }) => (<Image style={styles.tabBarIconStyle} source={require('./assets/icons/normal/settingsIcon.svg')} />), }} />
-        <Tab.Screen name="Profile" component={Profile} options={{ tabBarIcon: ({ color, size }) => (<Image style={styles.tabBarIconStyle} source={require('./assets/icons/normal/personIcon.svg')} />), }} />
+        <Tab.Screen name="Login" component={Login} options={{ tabBarIcon: ({ color, size }) => (<Image style={styles.tabBarIconStyle} source={require('./assets/icons/normal/personIcon.svg')} />), }} />
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   tabBarStyle: {
     position: 'absolute',
     margin: 15,
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
     borderRadius: 8,
     height: 48,
     padding: 8,

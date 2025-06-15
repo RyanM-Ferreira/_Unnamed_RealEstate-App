@@ -1,97 +1,74 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 
 import StylesGlobal from '../stylesGlobal';
 import { Colors } from './../stylesGlobal';
 
-export default function Home() {
+export default function Home({ navigation }) {
     return (
         /* As we are collaborating, please add comments in each section for better understanding,
         as time is short (not necessarily in English, I am stupid).*/
 
         <ScrollView style={StylesGlobal.bodyContainer} showsHorizontalScrollIndicator={false}>
-            <View style={StylesGlobal.mainContainer}>
-                {/* Header */}
-                <View style={styles.header}>
-                    <View style={styles.profileIcon}>
-                        <Image style={styles.icon} source={require('../assets/icons/alt/personIcon.svg')} />
-                    </View>
-                    <Text style={styles.sellerText}>[Vendedor]</Text>
-                </View>
 
-                <View style={styles.imageView} />
-
-                {/* Price and Location */}
-                <View style={styles.infoSection}>
-                    <Text style={styles.price}>R$ 350.000</Text>
-                    <Text style={styles.typeFor}>Disponível para COMPRA em</Text>
-                    <Text style={styles.locationTitle}>Portal do Éden, Itu.</Text>
-                </View>
-
-                {/* Details */}
-                <View style={styles.detailsRow}>
-                    <Text style={styles.detail}><Text style={styles.detailAccent}>Área: </Text>500m²</Text>
-                    <Text style={styles.detail}><Text style={styles.detailAccent}>Qt. Cômodos: </Text>05</Text>
-                    <Text style={styles.detail}><Text style={styles.detailAccent}>Banheiros: </Text>02</Text>
-                    <Text style={styles.detail}><Text style={styles.detailAccent}>Garagem: </Text>01</Text>
-                </View>
-
-                {/* Buttons */}
-                <View style={styles.buttonsView}>
-                    <TouchableOpacity style={styles.iconButton}>
-                        <Image style={styles.icon} source={require('../assets/icons/alt/savedIcon.svg')} />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.textButton}>
-                        <Text style={styles.buttonText}>Contato</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.iconButton}>
-                        <Image style={styles.icon} source={require('../assets/icons/alt/rightArrow.svg')} />
-                    </TouchableOpacity>
-                </View>
+            <View style={StylesGlobal.navBar}>
+                <TouchableOpacity>
+                    <Image style={StylesGlobal.icon} source={require('../assets/icons/normal/menuIcon.svg')} />
+                </TouchableOpacity>
+                <TextInput
+                    placeholder="Pelo o que está buscando?"
+                    style={StylesGlobal.navInput}
+                />
+                <TouchableOpacity>
+                    <Image style={StylesGlobal.icon} source={require('../assets/icons/normal/loupIcon.svg')} />
+                </TouchableOpacity>
             </View>
-            <View style={StylesGlobal.mainContainer}>
-                {/* Header */}
-                <View style={styles.header}>
-                    <View style={styles.profileIcon}>
-                        <Image style={styles.icon} source={require('../assets/icons/alt/personIcon.svg')} />
+
+            <TouchableOpacity onPress={() => navigation.navigate('advertisement')}>
+                <View style={StylesGlobal.mainContainer}>
+
+
+                    {/* Header */}
+                    <View style={styles.header}>
+                        <View style={styles.profileIcon}>
+                            <Image style={styles.icon} source={require('../assets/icons/alt/personIcon.svg')} />
+                        </View>
+                        <Text style={styles.sellerText}>[Vendedor]</Text>
                     </View>
-                    <Text style={styles.sellerText}>[Vendedor]</Text>
+
+                    <View style={styles.imageView} />
+
+                    {/* Price and Location */}
+                    <View style={styles.infoSection}>
+                        <Text style={styles.price}>R$ 350.000</Text>
+                        <Text style={styles.typeFor}>Disponível para COMPRA em</Text>
+                        <Text style={styles.locationTitle}>Portal do Éden, Itu.</Text>
+                    </View>
+
+                    {/* Details */}
+                    <View style={styles.detailsRow}>
+                        <Text style={styles.detail}><Text style={styles.detailAccent}>Área: </Text>500m²</Text>
+                        <Text style={styles.detail}><Text style={styles.detailAccent}>Qt. Cômodos: </Text>05</Text>
+                        <Text style={styles.detail}><Text style={styles.detailAccent}>Banheiros: </Text>02</Text>
+                        <Text style={styles.detail}><Text style={styles.detailAccent}>Garagem: </Text>01</Text>
+                    </View>
+
+                    {/* Buttons */}
+                    <View style={styles.buttonsView}>
+                        <TouchableOpacity style={styles.iconButton}>
+                            <Image style={styles.icon} source={require('../assets/icons/alt/savedIcon.svg')} />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.textButton}>
+                            <Text style={styles.buttonText}>Contato</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.iconButton}>
+                            <Image style={styles.icon} source={require('../assets/icons/alt/rightArrow.svg')} />
+                        </TouchableOpacity>
+                    </View>
                 </View>
-
-                <View style={styles.imageView} />
-
-                {/* Price and Location */}
-                <View style={styles.infoSection}>
-                    <Text style={styles.price}>R$ 350.000</Text>
-                    <Text style={styles.typeFor}>Disponível para COMPRA em</Text>
-                    <Text style={styles.locationTitle}>Portal do Éden, Itu.</Text>
-                </View>
-
-                {/* Details */}
-                <View style={styles.detailsRow}>
-                    <Text style={styles.detail}><Text style={styles.detailAccent}>Área: </Text>500m²</Text>
-                    <Text style={styles.detail}><Text style={styles.detailAccent}>Qt. Cômodos: </Text>05</Text>
-                    <Text style={styles.detail}><Text style={styles.detailAccent}>Banheiros: </Text>02</Text>
-                    <Text style={styles.detail}><Text style={styles.detailAccent}>Garagem: </Text>01</Text>
-                </View>
-
-                {/* Buttons */}
-                <View style={styles.buttonsView}>
-                    <TouchableOpacity style={styles.iconButton}>
-                        <Image style={styles.icon} source={require('../assets/icons/alt/savedIcon.svg')} />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.textButton}>
-                        <Text style={styles.buttonText}>Contato</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.iconButton}>
-                        <Image style={styles.icon} source={require('../assets/icons/alt/rightArrow.svg')} />
-                    </TouchableOpacity>
-                </View>
-            </View>
+            </TouchableOpacity>
         </ScrollView>
     );
 }

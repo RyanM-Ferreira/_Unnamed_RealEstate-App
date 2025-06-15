@@ -48,8 +48,8 @@ const StylesGlobal = StyleSheet.create({
         alignItems: 'center',
     },
     icon: {
-        width: 20,
-        height: 20,
+        width: 24,
+        height: 24,
         resizeMode: 'contain',
     },
     header: {

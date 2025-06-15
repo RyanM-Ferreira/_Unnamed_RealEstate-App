@@ -143,15 +143,14 @@ const styles = StyleSheet.create({
         fontSize: 14,
     },
     chatBallon: {
-        width: 32,
-        height: 32,
+        width: 26,
+        height: 26,
         justifyContent: 'center',
         alignItems: 'center',
-        position: 'relative',
     },
     chatBallonIcon: {
-        width: 32,
-        height: 32,
+        width: 26,
+        height: 26,
         position: 'absolute',
         top: 0,
         left: 0,
@@ -160,7 +159,7 @@ const styles = StyleSheet.create({
     chatBallonText: {
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 14,
+        fontSize: 12,
         zIndex: 2,
         paddingBottom: 6,
     },

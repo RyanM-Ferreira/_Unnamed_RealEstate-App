@@ -48,7 +48,6 @@ export default function App() {
         <Stack.Screen name="Saved" component={Saved} />
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="Profile" component={Profile} />
-
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -60,8 +59,9 @@ const styles = StyleSheet.create({
     margin: 15,
     backgroundColor: 'white',
     borderRadius: 8,
-    height: 48,
+    height: 54,
     padding: 8,
+    paddingTop: 4,
     borderColor: Colors.primaryColor,
     borderWidth: 2,
   },

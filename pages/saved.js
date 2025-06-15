@@ -57,12 +57,6 @@ export default function Saved({ navigation }) {
                             <Text style={styles.label}>Disponível para COMPRA em:</Text>
                             <Text style={styles.location}>Centro, Cabreúva.</Text>
                         </View>
-                        <View style={styles.infoDetails}>
-                            <Text style={styles.infoText}>Área: <Text style={styles.infoBold}>250m²</Text></Text>
-                            <Text style={styles.infoText}>Qnt. Cômodos: <Text style={styles.infoBold}>02</Text></Text>
-                            <Text style={styles.infoText}>Banheiros: <Text style={styles.infoBold}>01</Text></Text>
-                            <Text style={styles.infoText}>Garagem: <Text style={styles.infoBold}>01</Text></Text>
-                        </View>
                         <View style={styles.infoBox}></View>
                     </View>
 
@@ -172,6 +166,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'flex-start',
         marginBottom: 8,
+        justifyContent: 'space-between', // distribui proporcionalmente
     },
     price: {
         color: Colors.primaryColor,

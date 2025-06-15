@@ -11,18 +11,18 @@ export default function SettingsScreen({ navigation }) {
     return (
         <View style={StylesGlobal.bodyContainer}>
 
-            <View style={StylesGlobal.navBar}>
-                <TouchableOpacity>
-                    <Image style={StylesGlobal.icon} source={require('../assets/icons/normal/menuIcon.svg')} />
-                </TouchableOpacity>
-                <TextInput
-                    placeholder="Pelo o que está buscando?"
-                    style={StylesGlobal.navInput}
-                />
-                <TouchableOpacity>
-                    <Image style={StylesGlobal.icon} source={require('../assets/icons/normal/loupIcon.svg')} />
-                </TouchableOpacity>
+            <View style={StylesGlobal.header}>
+                <View style={StylesGlobal.leftheader}>
+                    <Text style={StylesGlobal.headerTitle}>Configurações</Text>
+                </View>
+                <View style={StylesGlobal.rightheader}>
+                    <Image
+                        source={require('../assets/icons/normal/settingsIcon.svg')}
+                        style={StylesGlobal.icon}
+                    />
+                </View>
             </View>
+
 
             <Text style={styles.sectionTitle}>Cadastrado em nome de:</Text>
             <View style={styles.contentSection}>
@@ -52,9 +52,11 @@ export default function SettingsScreen({ navigation }) {
             </View>
 
             <Text style={styles.sectionTitle}>Privacidade</Text>
-            <TouchableOpacity style={styles.deleteButton} onPress={() => { }}>
-                <Text style={styles.deleteButtonText}>Excluir conta</Text>
-            </TouchableOpacity>
+            <View style={styles.contentSection}>
+                <Text style={styles.email}>Sair da conta</Text>
+                <TouchableOpacity style={styles.deleteButton}>Sair</TouchableOpacity>
+            </View>
+
         </View>
     );
 }
@@ -79,14 +81,15 @@ const styles = StyleSheet.create({
     },
     logoutButton: {
         backgroundColor: Colors.primaryColor,
-        borderRadius: 8,
-        padding: 8,
+        borderRadius: 6,
+        padding: 12,
         height: 24,
         width: 48,
         fontSize: 12,
         color: 'white',
         justifyContent: 'center',
         alignItems: 'center',
+        fontWeight: 'bold',
     },
     contentSection: {
         flexDirection: 'row',
@@ -103,13 +106,14 @@ const styles = StyleSheet.create({
     },
     deleteButton: {
         backgroundColor: Colors.alertColor,
+        borderRadius: 6,
         padding: 12,
-        borderRadius: 8,
-        marginTop: 10,
-        alignItems: 'center'
-    },
-    deleteButtonText: {
+        height: 24,
+        width: 48,
+        fontSize: 12,
         color: 'white',
-        fontWeight: 'bold'
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontWeight: 'bold',
     },
 });

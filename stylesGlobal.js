@@ -34,7 +34,7 @@ const StylesGlobal = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 8,
         borderWidth: 2,
-        height: 48,
+        height: 54,
         padding: 8,
         borderColor: Colors.primaryColor,
         backgroundColor: 'white',
@@ -61,7 +61,7 @@ const StylesGlobal = StyleSheet.create({
         marginBottom: 16,
         padding: 8,
         width: '100%',
-        height: 48,
+        height: 54,
     },
     leftheader: {
         width: '50%',

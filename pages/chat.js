@@ -6,21 +6,16 @@ export default function Chat({ navigation }) {
     return (
         <ScrollView style={StylesGlobal.bodyContainer}>
 
-            <View style={StylesGlobal.navBar}>
-                <TouchableOpacity>
-                    <Image style={StylesGlobal.icon} source={require('../assets/icons/normal/menuIcon.svg')} />
-                </TouchableOpacity>
-                <TextInput
-                    placeholder="Pelo o que está buscando?"
-                    style={StylesGlobal.navInput}
-                />
-                <TouchableOpacity>
-                    <Image style={StylesGlobal.icon} source={require('../assets/icons/normal/loupIcon.svg')} />
-                </TouchableOpacity>
-            </View>
-
             <View style={StylesGlobal.header}>
-                <Text style={StylesGlobal.headerTitle}>Conversas</Text>
+                <View style={StylesGlobal.leftheader}>
+                    <Text style={StylesGlobal.headerTitle}>Conversas</Text>
+                </View>
+                <View style={StylesGlobal.rightheader}>
+                    <Image
+                        source={require('../assets/icons/normal/contactIcon.svg')}
+                        style={StylesGlobal.icon}
+                    />
+                </View>
             </View>
 
             <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ChatIn')}>

@@ -12,7 +12,7 @@ export default function Advertisement({ navigation }) {
                     </TouchableOpacity>
                 </View>
                 <View style={StylesGlobal.rightheader}>
-                    <Text style={StylesGlobal.headerTitle}>Voltar</Text>
+                    <Text style={StylesGlobal.headerTitle}>Anúncio</Text>
                 </View>
             </View>
 

@@ -89,7 +89,7 @@ export default function SignUp({ navigation }) {
                     <Text style={StylesLogin.loginLink} onPress={() => navigation.goBack()}>Já possui uma conta? Entre aqui!</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={StylesLogin.button} onPress={() => navigation.navigate('Home')}>
+                <TouchableOpacity style={StylesLogin.button} onPress={() => navigation.navigate('Profile')}>
                     <Text style={StylesLogin.buttonText} >Criar</Text>
                 </TouchableOpacity>
             </ScrollView >

@@ -1,31 +1,24 @@
 import React from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
 
+import StylesGlobal from '../stylesGlobal';
+import { Colors } from '../stylesGlobal';
+
 export default function Profile({ navigation }) {
     return (
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity style={styles.menuButton}>
-                    <Image
-                        source={require('../assets/icons/normal/menuIcon.svg')}
-                        style={styles.headerIcon}
-                    />
-                </TouchableOpacity>
-                <TextInput
-                    style={styles.searchInput}
-                    placeholder="Pelo o que está buscando?"
-                    placeholderTextColor="#888"
-                />
-                <TouchableOpacity style={styles.searchButton}>
-                    <Image
-                        source={require('../assets/icons/normal/loupIcon.svg')}
-                        style={styles.headerIcon}
-                    />
-                </TouchableOpacity>
+        <View style={StylesGlobal.bodyContainer}>
+            <View style={StylesGlobal.header}>
+                <View style={StylesGlobal.leftheader}>
+                    <TouchableOpacity style={StylesGlobal.backButton} onPress={() => navigation.replace('MainTabs')} >
+                        <Image source={require('../assets/icons/normal/leftArrow.svg')} style={StylesGlobal.backIcon} />
+                    </TouchableOpacity>
+                </View>
+                <View style={StylesGlobal.rightheader}>
+                    <Text style={StylesGlobal.headerTitle}>Perfil</Text>
+                </View>
             </View>
 
-            <ScrollView style={{ flex: 1 }}>
-                {/* Card do usuário */}
+            <ScrollView>
                 <View style={styles.userCard}>
                     <View style={styles.userCardLeft}>
                         <View style={styles.avatarBox}>
@@ -98,57 +91,14 @@ export default function Profile({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#DBDBDB',
-        padding: 10,
-    },
-    header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: '#fff',
-        borderRadius: 16,
-        padding: 10,
-        marginBottom: 14,
-        width: '100%',
-        height: 56,
-        shadowColor: '#000',
-        shadowOpacity: 0.04,
-        shadowRadius: 2,
-        elevation: 2,
-    },
-    menuButton: {
-        padding: 6,
-        marginRight: 4,
-    },
-    headerIcon: {
-        width: 28,
-        height: 28,
-        resizeMode: 'contain',
-    },
-    searchInput: {
-        flex: 1,
-        backgroundColor: '#fff',
-        borderRadius: 10,
-        paddingHorizontal: 14,
-        fontSize: 17,
-        marginHorizontal: 6,
-        borderWidth: 1.5,
-        borderColor: '#d1c4e9',
-        height: 36,
-    },
-    searchButton: {
-        padding: 6,
-        marginLeft: 4,
-    },
     userCard: {
-        backgroundColor: '#fff',
         borderRadius: 12,
         marginBottom: 16,
         padding: 16,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        backgroundColor: 'white',
     },
     userCardLeft: {
         flexDirection: 'row',
@@ -160,7 +110,7 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         borderRadius: 8,
-        backgroundColor: '#7C37F4',
+        backgroundColor: Colors.primaryColor,
         alignItems: 'center',
         justifyContent: 'center',
         marginRight: 8,
@@ -176,29 +126,25 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
     userName: {
-        color: '#7C37F4',
+        color: Colors.primaryColor,
         fontWeight: 'bold',
         fontSize: 18,
     },
     userDesc: {
-        color: '#222',
-        fontSize: 13,
+        fontSize: 12,
     },
     userCardRight: {
         padding: 8,
         justifyContent: 'space-between',
         alignItems: 'flex-end',
-        width: '20%',
-        height: '100%',
         marginLeft: 12,
         marginBottom: 25,
-
     },
     exitProfileIcon: {
         width: 15,
         height: 15,
         resizeMode: 'contain',
-        tintColor: '#7C37F4',
+        tintColor: Colors.primaryColor,
     },
     infoCard: {
         backgroundColor: '#fff',
@@ -213,51 +159,27 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     infoCardTitle: {
-        color: '#7C37F4',
+        color: Colors.primaryColor,
         fontWeight: 'bold',
-        fontSize: 17,
+        fontSize: 16,
     },
     editBtn: {
-        backgroundColor: '#7C37F4',
+        backgroundColor: Colors.primaryColor,
         borderRadius: 6,
         paddingHorizontal: 12,
         paddingVertical: 4,
     },
     editBtnText: {
-        color: '#fff',
+        color: 'white',
         fontWeight: 'bold',
         fontSize: 13,
     },
     infoLine: {
         fontSize: 14,
         marginBottom: 4,
-        color: '#222',
     },
     infoLabel: {
-        color: '#7C37F4',
+        color: Colors.primaryColor,
         fontWeight: 'bold',
-    },
-    bottomMenu: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: '#fff',
-        borderRadius: 12,
-        margin: 8,
-        paddingHorizontal: 8,
-        paddingVertical: 4,
-        borderWidth: 2,
-        borderColor: '#7C37F4',
-    },
-    menuItem: {
-        flex: 1,
-        alignItems: 'center',
-        paddingVertical: 4,
-    },
-    menuIcon: {
-        width: 28,
-        height: 28,
-        resizeMode: 'contain',
-        tintColor: '#7C37F4',
     },
 });

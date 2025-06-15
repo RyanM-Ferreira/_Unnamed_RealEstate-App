@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
         height: 140,
         borderRadius: 8,
         marginBottom: 12,
+        width: '100%',
     },
     infoSection: {
         marginBottom: 10,

@@ -2,21 +2,18 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput, Image } from 'react-native';
 import StylesGlobal, { Colors } from '../stylesGlobal';
 
-export default function Advertisement() {
+export default function Advertisement({ navigation }) {
     return (
         <ScrollView style={StylesGlobal.bodyContainer}>
-
-            <View style={StylesGlobal.navBar}>
-                <TouchableOpacity >
-                    <Image style={StylesGlobal.icon} source={require('../assets/icons/normal/menuIcon.svg')} />
-                </TouchableOpacity>
-                <TextInput
-                    placeholder="Pelo o que está buscando?"
-                    style={StylesGlobal.navInput}
-                />
-                <TouchableOpacity>
-                    <Image style={StylesGlobal.icon} source={require('../assets/icons/normal/loupIcon.svg')} />
-                </TouchableOpacity>
+            <View style={StylesGlobal.header}>
+                <View style={StylesGlobal.leftheader}>
+                    <TouchableOpacity style={StylesGlobal.backButton} onPress={() => navigation.goBack()} >
+                        <Image source={require('../assets/icons/normal/leftArrow.svg')} style={StylesGlobal.backIcon} />
+                    </TouchableOpacity>
+                </View>
+                <View style={StylesGlobal.rightheader}>
+                    <Text style={StylesGlobal.headerTitle}>Voltar</Text>
+                </View>
             </View>
 
             <View style={styles.card}>
@@ -49,7 +46,7 @@ export default function Advertisement() {
                 <View style={styles.detailsRow}>
                     <TouchableOpacity style={styles.detailsButton}>
                         <Image style={styles.detailsIcon} source={require('../assets/icons/alt/infoIcon.svg')} />
-                        <Text style={styles.detailsButtonText}>Visualizar detalhes</Text>
+                        <Text style={styles.detailsButtonText}>Detalhes</Text>
                     </TouchableOpacity>
                     <View style={styles.iconActions}>
                         <TouchableOpacity style={styles.iconButton}>
@@ -174,8 +171,7 @@ const styles = StyleSheet.create({
     detailsButton: {
         backgroundColor: Colors.primaryColor,
         borderRadius: 10,
-        paddingVertical: 10,
-        paddingHorizontal: 8,
+        padding: 12,
         flexDirection: 'row',
         alignItems: 'center',
         flex: 1,
@@ -187,9 +183,11 @@ const styles = StyleSheet.create({
         marginRight: 4,
     },
     detailsButtonText: {
-        color: '#fff',
+        color: 'white',
         fontWeight: 'bold',
         fontSize: 16,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     iconActions: {
         flexDirection: 'row',
@@ -233,13 +231,13 @@ const styles = StyleSheet.create({
         fontSize: 14,
     },
     location: {
-        width: '50%',
+        width: '48%',
         alignItems: 'center',
         marginRight: 8,
         height: 64,
     },
     otherPosts: {
-        width: '50%',
+        width: '48%',
         height: 64,
         borderWidth: 4,
         backgroundColor: 'transparent',

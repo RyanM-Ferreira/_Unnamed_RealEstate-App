@@ -3,9 +3,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Image, StyleSheet } from 'react-native';
+
 import { Colors } from './stylesGlobal';
 
-// Importação das páginas
+// Pages
 import Home from './pages/home';
 import Saved from './pages/saved';
 import Chat from './pages/chat';
@@ -22,7 +23,7 @@ const Stack = createNativeStackNavigator();
 
 function MainTabs() {
   return (
-    <Tab.Navigator initialRouteName="Home" screenOptions={{ headerShown: false, tabBarShowLabel: false, tabBarStyle: styles.tabBarStyle, }}>
+    <Tab.Navigator screenOptions={{ headerShown: false, tabBarShowLabel: false, tabBarStyle: styles.tabBarStyle, }}>
       <Tab.Screen name="Home" component={Home} options={{ tabBarIcon: () => (<Image style={styles.tabBarIconStyle} source={require('./assets/icons/normal/homeIcon.svg')} />), }} />
       <Tab.Screen name="Saved" component={Saved} options={{ tabBarIcon: () => (<Image style={styles.tabBarIconStyle} source={require('./assets/icons/normal/savedIcon.svg')} />), }} />
       <Tab.Screen name="Chat" component={Chat} options={{ tabBarIcon: () => (<Image style={styles.tabBarIconStyle} source={require('./assets/icons/normal/contactIcon.svg')} />), }} />
@@ -35,7 +36,7 @@ function MainTabs() {
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName="Greetings" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="MainTabs" component={MainTabs} />
         <Stack.Screen name="Advertisement" component={Advertisement} />
         <Stack.Screen name="Login" component={Login} />
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     height: 48,
     padding: 8,
-    borderColor: Colors?.primaryColor || '#7C37F4',
+    borderColor: Colors.primaryColor,
     borderWidth: 2,
   },
   tabBarIconStyle: {

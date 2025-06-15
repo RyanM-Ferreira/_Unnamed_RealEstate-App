@@ -52,6 +52,44 @@ const StylesGlobal = StyleSheet.create({
         height: 20,
         resizeMode: 'contain',
     },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        borderRadius: 8,
+        marginBottom: 16,
+        padding: 8,
+        width: '100%',
+        height: 48,
+    },
+    leftheader: {
+        width: '50%',
+        alignItems: 'flex-start',
+    },
+    rightheader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '50%',
+        justifyContent: 'flex-end',
+    },
+    headerTitle:
+    {
+        color: Colors.primaryColor,
+        fontWeight: 'bold',
+        marginHorizontal: 8,
+        fontSize: 16,
+    },
+    backButton: {
+        padding: 4,
+        width: 64,
+    },
+    backIcon: {
+        width: 28,
+        height: 28,
+        tintColor: Colors.primaryColor,
+        resizeMode: 'contain',
+    },
 });
 
 export default StylesGlobal;

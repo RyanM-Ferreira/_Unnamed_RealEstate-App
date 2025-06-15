@@ -19,8 +19,8 @@ export default function Chat({ navigation }) {
                 </TouchableOpacity>
             </View>
 
-            <View style={styles.titleBox}>
-                <Text style={styles.title}>Conversas</Text>
+            <View style={StylesGlobal.header}>
+                <Text style={StylesGlobal.headerTitle}>Conversas</Text>
             </View>
 
             <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ChatIn')}>
@@ -111,21 +111,6 @@ export default function Chat({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    titleBox: {
-        backgroundColor: '#fff',
-        borderRadius: 10,
-        marginBottom: 14,
-        paddingVertical: 8,
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        height: 48,
-    },
-    title: {
-        color: Colors.primaryColor,
-        fontWeight: 'bold',
-        fontSize: 24,
-    },
     card: {
         flexDirection: 'row',
         alignItems: 'center',

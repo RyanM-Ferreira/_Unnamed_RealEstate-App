@@ -23,7 +23,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="ChatIn"
+        initialRouteName="Saved"
         screenOptions={{
           headerShown: false,
           tabBarActiveTintColor: '#e91e63',

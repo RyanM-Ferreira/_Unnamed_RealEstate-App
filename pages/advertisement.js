@@ -98,7 +98,6 @@ export default function Advertisement() {
                 </View>
             </View>
 
-
             <View style={styles.otherDetailsBox}>
                 <View style={styles.locationBox}>
                     <Text style={styles.boxTitle}>Localização:</Text>
@@ -109,7 +108,6 @@ export default function Advertisement() {
                 </TouchableOpacity>
             </View>
 
-            {/* Financiamento */}
             <View style={styles.financeBox}>
                 <Text style={styles.boxTitle}>Precisa financiar?</Text>
                 <TouchableOpacity style={styles.financeButton}>
@@ -117,7 +115,6 @@ export default function Advertisement() {
                 </TouchableOpacity>
             </View>
 
-            {/* Botão Contatar vendedor */}
             <TouchableOpacity style={styles.contactButton}>
                 <Image
                     source={require('../assets/icons/alt/contactIcon.svg')}

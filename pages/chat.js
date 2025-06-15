@@ -49,7 +49,6 @@ export default function Chat() {
                 </View>
             </TouchableOpacity>
 
-
             <TouchableOpacity style={styles.card}>
                 <View style={styles.avatar}>
                     <Image
@@ -70,7 +69,6 @@ export default function Chat() {
                 </View>
             </TouchableOpacity>
 
-
             <TouchableOpacity style={styles.card}>
                 <View style={styles.avatar}>
                     <Image
@@ -90,7 +88,6 @@ export default function Chat() {
                     <Text style={styles.chatBallonText}>5</Text>
                 </View>
             </TouchableOpacity>
-
 
             <TouchableOpacity style={styles.card}>
                 <View style={styles.avatar}>
@@ -153,7 +150,6 @@ export default function Chat() {
                     <Text style={styles.chatBallonText}>2</Text>
                 </View>
             </TouchableOpacity>
-
 
         </View >
     );

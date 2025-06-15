@@ -43,7 +43,7 @@ export default function SignUp({ navigation }) {
                 </TouchableOpacity>
 
                 <TouchableOpacity style={StylesLogin.button}>
-                    <Text style={StylesLogin.buttonText} onPress={() => navigation.navigate('Profile')}>Criar</Text>
+                    <Text style={StylesLogin.buttonText} onPress={() => navigation.navigate('Profile')}>Entrar</Text>
                 </TouchableOpacity>
             </View >
         </LinearGradient >

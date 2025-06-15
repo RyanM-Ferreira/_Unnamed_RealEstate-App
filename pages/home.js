@@ -50,11 +50,11 @@ export default function Home({ navigation }) {
                     </View>
 
                     <View style={styles.buttonsView}>
-                        <TouchableOpacity style={styles.iconButton}>
+                        <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('Saved')}>
                             <Image style={styles.icon} source={require('../assets/icons/alt/savedIcon.svg')} />
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.textButton}>
+                        <TouchableOpacity style={styles.textButton} onPress={() => navigation.navigate('Chat')}>
                             <Text style={styles.buttonText}>Contato</Text>
                         </TouchableOpacity>
 

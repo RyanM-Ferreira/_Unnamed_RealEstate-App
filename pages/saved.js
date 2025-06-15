@@ -32,7 +32,7 @@ export default function Saved({ navigation }) {
             </View>
 
             <ScrollView >
-                <View style={StylesGlobal.mainContainer}>
+                <TouchableOpacity style={StylesGlobal.mainContainer} onPress={() => navigation.navigate('Advertisement')}>
                     <View style={styles.cardHeader}>
                         <View style={styles.cardLeftHeader}>
                             <View style={styles.sellerIcon}>
@@ -79,7 +79,7 @@ export default function Saved({ navigation }) {
                                 style={styles.notifyIcon} />
                         </TouchableOpacity>
                     </View>
-                </View>
+                </TouchableOpacity>
             </ScrollView>
         </View>
     );

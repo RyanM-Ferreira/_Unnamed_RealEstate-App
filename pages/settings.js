@@ -4,7 +4,7 @@ import { View, Text, Switch, TouchableOpacity, Image, StyleSheet, TextInput } fr
 import StylesGlobal from '../stylesGlobal';
 import { Colors } from '../stylesGlobal';
 
-export default function SettingsScreen() {
+export default function SettingsScreen({ navigation }) {
     const [notifications, setnotifications] = useState(true);
     const [darkMode, setdarkMode] = useState(false);
 

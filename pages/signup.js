@@ -8,9 +8,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Colors } from '../stylesGlobal';
 import StylesGlobal from '../stylesGlobal';
 
-import { StylesLogin } from "./login";
-
-export default function SignUp() {
+export default function SignUp({ navigation }) {
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
@@ -22,8 +20,8 @@ export default function SignUp() {
     return (
         <LinearGradient
             colors={[Colors.primaryColor, Colors.gradientColor]}
-            style={StylesLoginGlobal.gradientBodyContainer}>
-            <ScrollView style={StylesLogin.container} showsHorizontalScrollIndicator={false}>
+            style={StylesGlobal.gradientBodyContainer}>
+            <ScrollView contentContainerStyle={StylesLogin.container} showsVerticalScrollIndicator={false}>
                 <Text style={StylesLogin.title}>Criar</Text>
 
                 <Text style={StylesLogin.label}>Nome:</Text>
@@ -87,14 +85,60 @@ export default function SignUp() {
                     secureTextEntry
                 />
 
-                <TouchableOpacity onPress={() => { }}>
-                    <Text style={StylesLogin.loginLink}>Já possui uma conta? Entre aqui!</Text>
+                <TouchableOpacity>
+                    <Text style={StylesLogin.loginLink} onPress={() => navigation.goBack()}>Já possui uma conta? Entre aqui!</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={StylesLogin.button} onPress={() => { }}>
-                    <Text style={StylesLogin.buttonText}>Criar</Text>
+                <TouchableOpacity style={StylesLogin.button} onPress={() => navigation.navigate('Home')}>
+                    <Text style={StylesLogin.buttonText} >Criar</Text>
                 </TouchableOpacity>
             </ScrollView >
         </LinearGradient >
     );
 }
+
+
+const StylesLogin = StyleSheet.create({
+    title: {
+        fontSize: 28,
+        color: Colors.primaryColor,
+        fontWeight: 'bold',
+        marginBottom: 12,
+    },
+    container: {
+        backgroundColor: 'white',
+        borderRadius: 12,
+        padding: 20,
+        justifyContent: 'center',
+        marginVertical: 'auto',
+    },
+    label: {
+        marginBottom: 5,
+        marginTop: 10,
+        fontSize: 15
+    },
+    input: {
+        borderWidth: 2,
+        borderColor: Colors.primaryColor,
+        borderRadius: 8,
+        padding: 10,
+        color: 'black',
+    },
+    loginLink: {
+        marginTop: 20,
+        color: 'black',
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
+    button: {
+        backgroundColor: Colors.primaryColor,
+        padding: 15,
+        borderRadius: 10,
+        marginVertical: 8
+    },
+    buttonText: {
+        color: 'white',
+        textAlign: 'center',
+        fontWeight: 'bold'
+    }
+});

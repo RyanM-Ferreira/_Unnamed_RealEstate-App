@@ -6,13 +6,10 @@ import { Colors } from './../stylesGlobal';
 
 export default function Home({ navigation }) {
     return (
-        /* As we are collaborating, please add comments in each section for better understanding,
-        as time is short (not necessarily in English, I am stupid).*/
-
         <ScrollView style={StylesGlobal.bodyContainer} showsHorizontalScrollIndicator={false}>
 
             <View style={StylesGlobal.navBar}>
-                <TouchableOpacity>
+                <TouchableOpacity >
                     <Image style={StylesGlobal.icon} source={require('../assets/icons/normal/menuIcon.svg')} />
                 </TouchableOpacity>
                 <TextInput
@@ -24,11 +21,9 @@ export default function Home({ navigation }) {
                 </TouchableOpacity>
             </View>
 
-            <TouchableOpacity onPress={() => navigation.navigate('advertisement')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Advertisement')}>
                 <View style={StylesGlobal.mainContainer}>
 
-
-                    {/* Header */}
                     <View style={styles.header}>
                         <View style={styles.profileIcon}>
                             <Image style={styles.icon} source={require('../assets/icons/alt/personIcon.svg')} />
@@ -38,14 +33,15 @@ export default function Home({ navigation }) {
 
                     <View style={styles.imageView} />
 
-                    {/* Price and Location */}
-                    <View style={styles.infoSection}>
+                    <View style={styles.detailsRow}>
                         <Text style={styles.price}>R$ 350.000</Text>
-                        <Text style={styles.typeFor}>Disponível para COMPRA em</Text>
-                        <Text style={styles.locationTitle}>Portal do Éden, Itu.</Text>
+
+                        <View style={styles.infoSection}>
+                            <Text style={styles.typeFor}>Disponível para COMPRA em</Text>
+                            <Text style={styles.locationTitle}>Portal do Éden, Itu.</Text>
+                        </View>
                     </View>
 
-                    {/* Details */}
                     <View style={styles.detailsRow}>
                         <Text style={styles.detail}><Text style={styles.detailAccent}>Área: </Text>500m²</Text>
                         <Text style={styles.detail}><Text style={styles.detailAccent}>Qt. Cômodos: </Text>05</Text>
@@ -53,7 +49,6 @@ export default function Home({ navigation }) {
                         <Text style={styles.detail}><Text style={styles.detailAccent}>Garagem: </Text>01</Text>
                     </View>
 
-                    {/* Buttons */}
                     <View style={styles.buttonsView}>
                         <TouchableOpacity style={styles.iconButton}>
                             <Image style={styles.icon} source={require('../assets/icons/alt/savedIcon.svg')} />

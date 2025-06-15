@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 
+
 /* Apparently, React Native doesn't have Linear Gradient like CSS, so it's necessary to
 import an additional component*/
 import { LinearGradient } from 'expo-linear-gradient';
@@ -8,7 +9,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Colors } from '../stylesGlobal';
 import StylesGlobal from '../stylesGlobal';
 
-export default function SignUp() {
+export default function SignUp({ navigation }) {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
@@ -37,19 +38,19 @@ export default function SignUp() {
                     secureTextEntry
                 />
 
-                <TouchableOpacity onPress={() => { }}>
-                    <Text style={StylesLogin.loginLink}>Não possui uma conta? Crie aqui!</Text>
+                <TouchableOpacity>
+                    <Text onPress={() => navigation.navigate('SignUp')} style={StylesLogin.loginLink}>Não possui uma conta? Crie aqui!</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={StylesLogin.button} onPress={() => { }}>
-                    <Text style={StylesLogin.buttonText}>Criar</Text>
+                <TouchableOpacity style={StylesLogin.button}>
+                    <Text style={StylesLogin.buttonText} onPress={() => navigation.navigate('Home')}>Criar</Text>
                 </TouchableOpacity>
             </View >
         </LinearGradient >
     );
 }
 
-export const StylesLogin = StyleSheet.create({
+const StylesLogin = StyleSheet.create({
     title: {
         fontSize: 28,
         color: Colors.primaryColor,

@@ -53,8 +53,8 @@ export default function SettingsScreen({ navigation }) {
 
             <Text style={styles.sectionTitle}>Privacidade</Text>
             <View style={styles.contentSection}>
-                <Text style={styles.email}>Sair da conta</Text>
-                <TouchableOpacity style={styles.deleteButton}>Sair</TouchableOpacity>
+                <Text style={styles.email}>Deletar conta</Text>
+                <TouchableOpacity style={styles.deleteButton}>Deletar</TouchableOpacity>
             </View>
 
         </View>

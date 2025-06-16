@@ -64,6 +64,92 @@ export default function Home({ navigation }) {
                     </View>
                 </View>
             </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Advertisement')}>
+                <View style={StylesGlobal.mainContainer}>
+
+                    <View style={styles.header}>
+                        <View style={styles.profileIcon}>
+                            <Image style={styles.icon} source={require('../assets/icons/alt/personIcon.svg')} />
+                        </View>
+                        <Text style={styles.sellerText}>[Vendedor]</Text>
+                    </View>
+
+                    <View style={styles.imageView} />
+
+                    <View style={styles.detailsRow}>
+                        <Text style={styles.price}>R$ 350.000</Text>
+
+                        <View style={styles.infoSection}>
+                            <Text style={styles.typeFor}>Disponível para COMPRA em</Text>
+                            <Text style={styles.locationTitle}>Portal do Éden, Itu.</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.detailsRow}>
+                        <Text style={styles.detail}><Text style={styles.detailAccent}>Área: </Text>500m²</Text>
+                        <Text style={styles.detail}><Text style={styles.detailAccent}>Qt. Cômodos: </Text>05</Text>
+                        <Text style={styles.detail}><Text style={styles.detailAccent}>Banheiros: </Text>02</Text>
+                        <Text style={styles.detail}><Text style={styles.detailAccent}>Garagem: </Text>01</Text>
+                    </View>
+
+                    <View style={styles.buttonsView}>
+                        <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('Saved')}>
+                            <Image style={styles.icon} source={require('../assets/icons/alt/savedIcon.svg')} />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.textButton} onPress={() => navigation.navigate('Chat')}>
+                            <Text style={styles.buttonText}>Contato</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.iconButton}>
+                            <Image style={styles.icon} source={require('../assets/icons/alt/rightArrow.svg')} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Advertisement')}>
+                <View style={StylesGlobal.mainContainer}>
+
+                    <View style={styles.header}>
+                        <View style={styles.profileIcon}>
+                            <Image style={styles.icon} source={require('../assets/icons/alt/personIcon.svg')} />
+                        </View>
+                        <Text style={styles.sellerText}>[Vendedor]</Text>
+                    </View>
+
+                    <View style={styles.imageView} />
+
+                    <View style={styles.detailsRow}>
+                        <Text style={styles.price}>R$ 350.000</Text>
+
+                        <View style={styles.infoSection}>
+                            <Text style={styles.typeFor}>Disponível para COMPRA em</Text>
+                            <Text style={styles.locationTitle}>Portal do Éden, Itu.</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.detailsRow}>
+                        <Text style={styles.detail}><Text style={styles.detailAccent}>Área: </Text>500m²</Text>
+                        <Text style={styles.detail}><Text style={styles.detailAccent}>Qt. Cômodos: </Text>05</Text>
+                        <Text style={styles.detail}><Text style={styles.detailAccent}>Banheiros: </Text>02</Text>
+                        <Text style={styles.detail}><Text style={styles.detailAccent}>Garagem: </Text>01</Text>
+                    </View>
+
+                    <View style={styles.buttonsView}>
+                        <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('Saved')}>
+                            <Image style={styles.icon} source={require('../assets/icons/alt/savedIcon.svg')} />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.textButton} onPress={() => navigation.navigate('Chat')}>
+                            <Text style={styles.buttonText}>Contato</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.iconButton}>
+                            <Image style={styles.icon} source={require('../assets/icons/alt/rightArrow.svg')} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </TouchableOpacity>
         </ScrollView>
     );
 }

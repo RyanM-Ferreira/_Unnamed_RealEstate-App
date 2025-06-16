@@ -9,9 +9,6 @@ export const Colors = {
     gradientColor: '#A11D86',
 };
 
-/* It's probably good to explain why I use this. It's not a big deal,
-but it wasn't mentioned in class. I usually use this like in CSS
-to reuse code */
 const StylesGlobal = StyleSheet.create({
     bodyContainer: {
         flex: 1,
@@ -27,6 +24,7 @@ const StylesGlobal = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 12,
         padding: 20,
+        marginBottom: 16,
     },
     navBar: {
         flexDirection: 'row',
